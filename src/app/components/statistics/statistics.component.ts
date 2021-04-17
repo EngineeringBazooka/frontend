@@ -12,6 +12,10 @@ import {Chart} from 'chart.js';
 export class StatisticsComponent implements OnInit {
   private listRegion: Array<Region> = [
     {
+      id: 0, name: 'Волгоградская область', ITVacancy: 11.99, ITgraduate: 5.74, ITworker: 1.67,
+      ITCompany: 2.17, medianZP: 2, impactITinGRP: 2.13, result: false
+    },
+    {
       id: 1, name: 'Саратовская область', ITVacancy: 11.99, ITgraduate: 5.74, ITworker: 1.67,
       ITCompany: 2.17, medianZP: 2, impactITinGRP: 2.13, result: false
     },
@@ -34,7 +38,6 @@ export class StatisticsComponent implements OnInit {
   public curRegion: Region = this.listRegion[0];
   public result = '';
   private chartType: 'bar' | 'pie' = 'pie';
-  title = 'Orpheus';
 
   private charts: Chart[];
   private studentsSum: number;

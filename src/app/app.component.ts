@@ -8,6 +8,7 @@ import {StatisticsService} from './service/statisticsService';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements  OnInit{
+  title = 'Orpheus';
   ngOnInit(): void {
   }
 }
