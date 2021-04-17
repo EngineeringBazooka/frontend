@@ -10,11 +10,7 @@ import {Chart} from 'chart.js';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-  private listRegion: Array<Region> = [
-    {
-      id: 0, name: 'Волгоградская область', ITVacancy: 11.99, ITgraduate: 5.74, ITworker: 1.67,
-      ITCompany: 2.17, medianZP: 2, impactITinGRP: 2.13, result: false
-    },
+  public listRegion: Array<Region> = [
     {
       id: 1, name: 'Саратовская область', ITVacancy: 11.99, ITgraduate: 5.74, ITworker: 1.67,
       ITCompany: 2.17, medianZP: 2, impactITinGRP: 2.13, result: false
@@ -34,8 +30,7 @@ export class StatisticsComponent implements OnInit {
   ];
   public readonly maxMedianZP: number;
   public medianZPCoef: number;
-  public selectValue = 1;
-  public curRegion: Region = this.listRegion[1];
+  public curRegion: Region = this.listRegion[0];
   public result = '';
   private chartType: 'bar' | 'pie' = 'pie';
 
@@ -65,7 +60,6 @@ export class StatisticsComponent implements OnInit {
   }
 
   onSelection(): void {
-    this.curRegion = this.listRegion[this.selectValue];
     this.medianZPCoef = (this.curRegion.medianZP / this.maxMedianZP);
     this.medianZPCoef *= 100;
     this.medianZPCoef -= this.medianZPCoef % 1;

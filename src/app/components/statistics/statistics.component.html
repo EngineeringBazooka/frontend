@@ -2,11 +2,8 @@
   <div id="reg-table">
     <div class="form-group">
       <label for="exampleFormControlSelect1">Выбор региона</label>
-      <select (ngModelChange)="onSelection()" [(ngModel)] = 'selectValue' class="form-control" id="exampleFormControlSelect1">
-        <option value="1">Саратовская область</option>
-        <option value="2">Самарская область</option>
-        <option value="3">Московская область</option>
-        <option value="4">Сахалинская область</option>
+      <select (ngModelChange)="onSelection()" [(ngModel)] = 'curRegion' class="form-control" id="exampleFormControlSelect1">
+        <option *ngFor="let region of listRegion" [ngValue]="region">{{region.name}}</option>
       </select>
     </div>
     <div class="table">
