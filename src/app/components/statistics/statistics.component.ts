@@ -30,11 +30,11 @@ export class StatisticsComponent implements OnInit {
   ];
   public readonly maxMedianZP: number;
   public medianZPCoef: number;
-  public selectValue = 0;
+  public selectValue = 1;
   public curRegion: Region = this.listRegion[0];
   public result = '';
-  private chartType : 'bar' | 'pie' = 'pie';
-  title = 'front';
+  private chartType: 'bar' | 'pie' = 'pie';
+  title = 'Orpheus';
 
   private charts: Chart[];
   private studentsSum: number;
@@ -62,7 +62,7 @@ export class StatisticsComponent implements OnInit {
   }
 
   onSelection(): void {
-    this.curRegion = this.listRegion[this.selectValue];
+    this.curRegion = this.listRegion[this.selectValue - 1];
     this.medianZPCoef = (this.curRegion.medianZP / this.maxMedianZP);
     this.medianZPCoef *= 100;
     this.medianZPCoef -= this.medianZPCoef % 1;
