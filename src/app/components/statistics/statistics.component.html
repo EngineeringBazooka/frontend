@@ -24,6 +24,30 @@
     <div class="result m-4">
       {{result}}
     </div>
+    <div class="graphs">
+      <div id="graph-count">
+        <canvas></canvas>
+        <p class="mx-2">
+          Количество IT компаний, относительно остальных компаний, составляет {{curRegion.ITCompany}} процентов. <br>
+          {{curRegion.ITworker}} процентов среди всего занятого населения занято в IT компаниях.<br>
+          Среди вакансий {{curRegion.ITVacancy}} процентов составляют вакансии по IT специальностям.
+        </p>
+      </div>
+      <div id="graph-economics">
+        <p class="mx-2">
+          Медиана зарплат в Регионе составляет {{medianZPCoef}} процентов от лучшего показателя.
+          Вклад IT компаний в ВПР Региона составляет {{curRegion.impactITinGRP}} процентов от общего вклада всех компаний. <br>
+        </p>
+        <canvas></canvas>
+      </div>
+      <div id="graph-graduates">
+        <canvas></canvas>
+        <p class="mx-2">
+          В этом году выпускается {{curRegion.ITgraduate}} процентов выпускников по IT специальностям, относительно всего рынка.
+        </p>
+      </div>
+      <button class="btn btn-primary btn-sm" (click)="onSelection()"></button>
+    </div>
   </div>
 </main>
 <style>
@@ -91,4 +115,19 @@
     text-align: center;
   }
 
+  .graphs > div {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #00006644 solid 2px;
+  }
+
+  .graphs > div > canvas {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .graphs > div:last-child {
+    border-bottom: none;
+  }
 </style>
