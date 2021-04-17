@@ -1,8 +1,8 @@
-<main class="row ">
+<main class="row">
   <div id="reg-table">
     <div class="form-group">
       <label for="exampleFormControlSelect1">Выбор региона</label>
-      <select (ngModelChange)="onSelection()" [(ngModel)] = 'selectValue' class="form-control"id="exampleFormControlSelect1">
+      <select (ngModelChange)="onSelection()" [(ngModel)] = 'selectValue' class="form-control" id="exampleFormControlSelect1">
         <option value="1">Саратовская область</option>
         <option value="2">Самарская область</option>
         <option value="3">Московская область</option>
@@ -28,15 +28,15 @@
       <div id="graph-count">
         <canvas></canvas>
         <p class="mx-2">
-          Количество IT компаний, относительно остальных компаний, составляет {{curRegion.ITCompany}} процентов. <br>
-          {{curRegion.ITworker}} процентов среди всего занятого населения занято в IT компаниях.<br>
+          Количество IT компаний, относительно остальных компаний, составляет {{curRegion.ITCompany}} процентов. <br><br>
+          {{curRegion.ITworker}} процентов среди всего занятого населения занято в IT компаниях.<br><br>
           Среди вакансий {{curRegion.ITVacancy}} процентов составляют вакансии по IT специальностям.
         </p>
       </div>
       <div id="graph-economics">
         <p class="mx-2">
-          Медиана зарплат в Регионе составляет {{medianZPCoef}} процентов от лучшего показателя.
-          Вклад IT компаний в ВПР Региона составляет {{curRegion.impactITinGRP}} процентов от общего вклада всех компаний. <br>
+          Медиана зарплат в Регионе составляет {{medianZPCoef}} процентов от лучшего показателя. <br><br>
+          Вклад IT компаний в ВРП Региона составляет {{curRegion.impactITinGRP}} процентов от общего вклада всех компаний.
         </p>
         <canvas></canvas>
       </div>
@@ -46,7 +46,6 @@
           В этом году выпускается {{curRegion.ITgraduate}} процентов выпускников по IT специальностям, относительно всего рынка.
         </p>
       </div>
-      <button class="btn btn-primary btn-sm" (click)="onSelection()"></button>
     </div>
   </div>
 </main>
@@ -95,11 +94,11 @@
   }
 
   .row:first-child {
-    border-bottom: #00006644 solid 2px;
+    border-bottom: #007bff66 solid 2px;
   }
 
   .row > *  {
-    border-right: #00006644 solid 2px;
+    border-right: #007bff66 solid 2px;
     padding: 20px 20px;
     width: calc((100 / 3) * 1%);
   }
@@ -119,15 +118,12 @@
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: #00006644 solid 2px;
+    align-items: center;
+    border-top: #007bff66 solid 2px;
   }
 
   .graphs > div > canvas {
     max-width: 400px;
     max-height: 400px;
-  }
-
-  .graphs > div:last-child {
-    border-bottom: none;
   }
 </style>
