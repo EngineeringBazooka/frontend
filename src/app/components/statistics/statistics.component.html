@@ -1,0 +1,94 @@
+<main class="row ">
+  <div id="reg-table">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Выбор региона</label>
+      <select (ngModelChange)="onSelection()" [(ngModel)] = 'selectValue' class="form-control"id="exampleFormControlSelect1">
+        <option value="1">Саратовская область</option>
+        <option value="2">Самарская область</option>
+        <option value="3">Московская область</option>
+        <option value="4">Сахалинская область</option>
+      </select>
+    </div>
+    <div class="table">
+      <div class="row">
+        <div>IT Компаний<br>{{curRegion.ITCompany}}%</div>
+        <div>IT Работников<br>{{curRegion.ITworker}}%</div>
+        <div>IT Вакансий<br>{{curRegion.ITVacancy}}%</div>
+      </div>
+      <div class="row">
+        <div>IT Выпускников<br>{{curRegion.ITgraduate}}%</div>
+        <div>Медиана зарплат<br>{{curRegion.medianZP}}</div>
+        <div>Вклад IT в ВВП Региона<br>{{curRegion.impactITinGRP}}%</div>
+      </div>
+    </div>
+    <div class="result m-4">
+      {{result}}
+    </div>
+  </div>
+</main>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap');
+
+  /*general*/
+
+  body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    --header-height: 70px;
+    --main-top-offset: 200px;
+  }
+
+  select {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 0;
+  }
+
+
+  #reg-table {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .row:first-child {
+    border-bottom: #00006644 solid 2px;
+  }
+
+  .row > *  {
+    border-right: #00006644 solid 2px;
+    padding: 20px 20px;
+    width: calc((100 / 3) * 1%);
+  }
+
+  .row > *:last-child {
+    border: none;
+  }
+
+  .result {
+    font-size: 2.5rem;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+  }
+
+</style>
