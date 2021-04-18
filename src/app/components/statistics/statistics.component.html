@@ -2,7 +2,7 @@
   <div id="reg-table">
     <div class="form-group">
       <label for="exampleFormControlSelect1">Выбор региона</label>
-      <select (ngModelChange)="onSelection()" [(ngModel)] = 'curRegion' class="form-control" id="exampleFormControlSelect1">
+      <select (change)="onSelection()" [(ngModel)] = 'curRegion' class="form-control" id="exampleFormControlSelect1">
         <option *ngFor="let region of listRegion" [ngValue]="region">{{region.name}}</option>
       </select>
     </div>
